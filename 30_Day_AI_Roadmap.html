@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>30-Day AI Mastery Roadmap — Muhammad Muzakkar Azad</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f7;
+    --card: #ffffff;
+    --text: #2c2c2c;
+    --text-muted: #6b6b6b;
+    --text-light: #8a8a8a;
+    --accent: #2563eb;
+    --accent-light: #eff4ff;
+    --accent-soft: #dbeafe;
+    --border: #e8e6e3;
+    --border-light: #f0eeeb;
+    --week1: #2563eb;
+    --week2: #059669;
+    --week3: #d97706;
+    --week4: #dc2626;
+    --week1-bg: #eff4ff;
+    --week2-bg: #ecfdf5;
+    --week3-bg: #fffbeb;
+    --week4-bg: #fef2f2;
+    --tag-bg: #f3f4f6;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.04);
+    --shadow-lg: 0 10px 30px rgba(0,0,0,0.06), 0 4px 8px rgba(0,0,0,0.04);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* === HERO === */
+  .hero {
+    background: linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #faf9f7 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 60px 24px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(5,150,105,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-label {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  .hero p {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 620px;
+    margin: 0 auto 24px;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .hero-stat .label {
+    font-size: 12px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* === CONTAINER === */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* === INTRO === */
+  .intro-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin: -30px auto 40px;
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    box-shadow: var(--shadow-md);
+  }
+  .intro-card p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .intro-card strong { color: var(--text); }
+
+  /* === WEEK SECTION === */
+  .week-section {
+    margin-bottom: 50px;
+  }
+  .week-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .week-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .week-1 .week-badge { background: var(--week1-bg); color: var(--week1); }
+  .week-2 .week-badge { background: var(--week2-bg); color: var(--week2); }
+  .week-3 .week-badge { background: var(--week3-bg); color: var(--week3); }
+  .week-4 .week-badge { background: var(--week4-bg); color: var(--week4); }
+
+  .week-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .week-goal {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 20px;
+    padding-left: 2px;
+  }
+
+  /* === TABLE === */
+  .plan-table-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .plan-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  .plan-table thead th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+    color: var(--text-muted);
+    background: var(--bg);
+  }
+  .week-1 .plan-table thead th { border-bottom-color: var(--week1); }
+  .week-2 .plan-table thead th { border-bottom-color: var(--week2); }
+  .week-3 .plan-table thead th { border-bottom-color: var(--week3); }
+  .week-4 .plan-table thead th { border-bottom-color: var(--week4); }
+
+  .plan-table thead th:first-child { width: 50px; text-align: center; }
+  .plan-table thead th:nth-child(2) { width: 140px; }
+  .plan-table thead th:nth-child(4) { width: 150px; }
+  .plan-table thead th:last-child { width: 180px; }
+
+  .plan-table tbody tr {
+    border-bottom: 1px solid var(--border-light);
+    transition: background 0.15s;
+  }
+  .plan-table tbody tr:last-child { border-bottom: none; }
+  .plan-table tbody tr:hover { background: #fafafa; }
+
+  .plan-table td {
+    padding: 14px 16px;
+    vertical-align: top;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .plan-table td:first-child {
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .day-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .week-1 .day-num { background: var(--week1-bg); color: var(--week1); }
+  .week-2 .day-num { background: var(--week2-bg); color: var(--week2); }
+  .week-3 .day-num { background: var(--week3-bg); color: var(--week3); }
+  .week-4 .day-num { background: var(--week4-bg); color: var(--week4); }
+
+  .focus-label {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--text);
+  }
+
+  .resource-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    background: var(--tag-bg);
+    color: var(--text-muted);
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin: 2px 2px;
+    line-height: 1.5;
+  }
+
+  .deliverable {
+    font-size: 13px;
+    color: var(--text);
+    padding-left: 14px;
+    position: relative;
+  }
+  .deliverable::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+  }
+  .week-1 .deliverable::before { color: var(--week1); }
+  .week-2 .deliverable::before { color: var(--week2); }
+  .week-3 .deliverable::before { color: var(--week3); }
+  .week-4 .deliverable::before { color: var(--week4); }
+
+  .tip-bar {
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-style: italic;
+    color: var(--text-muted);
+    border-left: 3px solid;
+    background: var(--card);
+    margin-bottom: 0;
+  }
+  .week-1 .tip-bar { border-left-color: var(--week1); background: var(--week1-bg); }
+  .week-2 .tip-bar { border-left-color: var(--week2); background: var(--week2-bg); }
+  .week-3 .tip-bar { border-left-color: var(--week3); background: var(--week3-bg); }
+  .week-4 .tip-bar { border-left-color: var(--week4); background: var(--week4-bg); }
+
+  /* === MONEY SECTION === */
+  .money-section {
+    margin: 50px 0;
+  }
+  .money-section .section-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .money-section .section-sub {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+
+  .income-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+  }
+  .income-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .income-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+  .income-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .income-card h3 .icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .income-card .rate {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    color: #059669;
+    background: #ecfdf5;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  .income-card .desc {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  .income-card .how {
+    font-size: 12.5px;
+    color: var(--text-light);
+    padding-top: 10px;
+    border-top: 1px solid var(--border-light);
+    line-height: 1.6;
+  }
+  .income-card .how strong { color: var(--text-muted); }
+
+  /* === ROUTINE === */
+  .routine-section {
+    margin: 50px 0;
+  }
+  .routine-section .section-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+  .routine-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .routine-item {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .routine-item:last-child { border-bottom: none; }
+  .routine-time {
+    width: 130px;
+    flex-shrink: 0;
+    padding: 18px 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+  }
+  .routine-content {
+    padding: 18px 20px;
+    flex: 1;
+  }
+  .routine-content strong {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 3px;
+  }
+  .routine-content p {
+    font-size: 13.5px;
+    color: var(--text-muted);
+  }
+
+  /* === FOOTER === */
+  .footer-note {
+    background: linear-gradient(135deg, #f8faff 0%, #eef2ff 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin: 40px 0 60px;
+    text-align: center;
+  }
+  .footer-note p {
+    font-size: 15px;
+    color: var(--text-muted);
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.75;
+  }
+  .footer-note strong { color: var(--text); }
+  .footer-note .highlight {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .plan-table-wrap { overflow-x: auto; }
+    .plan-table { min-width: 700px; }
+    .income-grid { grid-template-columns: 1fr; }
+    .hero { padding: 40px 20px 36px; }
+    .hero-stats { gap: 20px; }
+    .routine-item { flex-direction: column; }
+    .routine-time { width: 100%; padding: 12px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-label">Personalized Learning Plan</div>
+  <h1>30-Day <em>AI Mastery</em> Roadmap</h1>
+  <p>A day-by-day plan to transform your backend expertise into AI + Automation mastery — and start earning.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">30</div><div class="label">Days</div></div>
+    <div class="hero-stat"><div class="num">7</div><div class="label">Income Streams</div></div>
+    <div class="hero-stat"><div class="num">3</div><div class="label">Portfolio Projects</div></div>
+    <div class="hero-stat"><div class="num">∞</div><div class="label">Potential</div></div>
+  </div>
+</header>
+
+<!-- INTRO -->
+<div class="container">
+  <div class="intro-card">
+    <p><strong>Your Advantage:</strong> You already have 5+ years of NestJS, TypeScript, AWS, and microservices experience. This plan layers <strong>AI APIs, RAG, AI Agents, n8n, and Make.com</strong> on top of your existing skills — making you a rare developer who can both build AI products and automate entire business workflows. Follow this plan full-time (6–8 hrs/day) and you'll be job-ready and freelance-ready in 30 days.</p>
+  </div>
+
+  <!-- ===================== WEEK 1 ===================== -->
+  <section class="week-section week-1">
+    <div class="week-header">
+      <span class="week-badge">Week 1</span>
+      <h2 class="week-title">AI Fundamentals + LLM APIs + n8n Basics</h2>
+    </div>
+    <p class="week-goal">Goal: Understand how LLMs work, master OpenAI & Anthropic APIs from NestJS, and start automating with n8n.</p>
+
+    <div class="plan-table-wrap">
+      <table class="plan-table">
+        <thead><tr><th>Day</th><th>Focus Area</th><th>Tasks & Activities</th><th>Resources</th><th>Deliverable</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="day-num">1</span></td>
+            <td><span class="focus-label">LLM Core Concepts</span></td>
+            <td>Study how LLMs work: tokens, prompts, context windows, temperature, top-p. Understand the difference between GPT-4, Claude, Gemini, and open-source models. Watch 2–3 explainer videos. Take handwritten notes.</td>
+            <td><span class="resource-tag">DeepLearning.ai</span> <span class="resource-tag">Andrej Karpathy YouTube</span></td>
+            <td><div class="deliverable">1-page notes: key LLM concepts and model comparison chart</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">2</span></td>
+            <td><span class="focus-label">Embeddings + RAG Theory</span></td>
+            <td>Learn what embeddings are, vector similarity (cosine), chunking strategies, and how RAG works conceptually. Understand when to use RAG vs fine-tuning vs prompt engineering.</td>
+            <td><span class="resource-tag">OpenAI Embeddings Guide</span> <span class="resource-tag">Pinecone Learning Center</span></td>
+            <td><div class="deliverable">RAG architecture diagram + when to use each approach</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">3</span></td>
+            <td><span class="focus-label">OpenAI API Hands-On</span></td>
+            <td>Get OpenAI API key. Build a NestJS service that calls GPT-4 API. Implement: basic chat completion, streaming responses, system prompts, conversation history management, token counting.</td>
+            <td><span class="resource-tag">OpenAI API Docs</span> <span class="resource-tag">openai npm</span> <span class="resource-tag">NestJS HttpModule</span></td>
+            <td><div class="deliverable">NestJS endpoint: POST /chat that streams GPT-4 responses</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">4</span></td>
+            <td><span class="focus-label">Anthropic API Hands-On</span></td>
+            <td>Get Anthropic API key. Build a NestJS service for Claude API. Implement streaming, multi-turn conversations, and compare response quality with GPT-4. Add a provider-switching mechanism.</td>
+            <td><span class="resource-tag">Anthropic API Docs</span> <span class="resource-tag">@anthropic-ai/sdk</span> <span class="resource-tag">Claude Cookbook</span></td>
+            <td><div class="deliverable">NestJS service supporting both OpenAI and Claude with provider toggle</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">5</span></td>
+            <td><span class="focus-label">Prompt Engineering</span></td>
+            <td>Master prompt engineering: few-shot examples, chain-of-thought, structured output (JSON mode), role-based prompts. Build a prompt testing harness in NestJS to compare results across different prompts.</td>
+            <td><span class="resource-tag">Anthropic Prompt Guide</span> <span class="resource-tag">promptingguide.ai</span></td>
+            <td><div class="deliverable">Prompt testing tool + collection of 10 proven prompt templates</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">6</span></td>
+            <td><span class="focus-label">n8n Setup + Basics</span></td>
+            <td>Install n8n via Docker. Learn the UI: nodes, connections, triggers, expressions. Build 3 workflows: (1) webhook → email, (2) scheduled RSS reader, (3) form submission → Google Sheets.</td>
+            <td><span class="resource-tag">n8n.io Docs</span> <span class="resource-tag">n8n YouTube</span> <span class="resource-tag">Docker</span></td>
+            <td><div class="deliverable">n8n running locally + 3 basic automation workflows</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">7</span></td>
+            <td><span class="focus-label">n8n + AI Integration</span></td>
+            <td>Add OpenAI node to n8n. Build: (1) webhook receives text → GPT summarizes → sends email, (2) Google Sheets trigger → AI categorizes row → updates sheet. Review all Week 1 concepts.</td>
+            <td><span class="resource-tag">n8n AI Nodes Docs</span> <span class="resource-tag">Community Templates</span></td>
+            <td><div class="deliverable">2 AI-powered n8n workflows + Week 1 review notes</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip-bar">💡 You already know REST APIs — calling LLM APIs is just another HTTP endpoint with extra prompt craft.</div>
+  </section>
+
+  <!-- ===================== WEEK 2 ===================== -->
+  <section class="week-section week-2">
+    <div class="week-header">
+      <span class="week-badge">Week 2</span>
+      <h2 class="week-title">RAG Systems + Vector DBs + Make.com</h2>
+    </div>
+    <p class="week-goal">Goal: Build production-grade RAG applications using pgvector, and master Make.com for no-code AI automation.</p>
+
+    <div class="plan-table-wrap">
+      <table class="plan-table">
+        <thead><tr><th>Day</th><th>Focus Area</th><th>Tasks & Activities</th><th>Resources</th><th>Deliverable</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="day-num">8</span></td>
+            <td><span class="focus-label">pgvector Setup</span></td>
+            <td>Install PostgreSQL + pgvector extension. Learn vector data types, indexing (IVFFlat, HNSW). Create a test table with vector columns. Practice inserting embeddings and running similarity queries.</td>
+            <td><span class="resource-tag">pgvector GitHub</span> <span class="resource-tag">PostgreSQL Docs</span></td>
+            <td><div class="deliverable">PostgreSQL + pgvector running with test similarity queries working</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">9</span></td>
+            <td><span class="focus-label">Document Ingestion</span></td>
+            <td>Build a NestJS service that: (1) accepts PDF/text uploads, (2) splits into chunks (500–1000 tokens with overlap), (3) generates embeddings via OpenAI, (4) stores in pgvector with metadata.</td>
+            <td><span class="resource-tag">LangChain.js Splitters</span> <span class="resource-tag">OpenAI Embeddings</span> <span class="resource-tag">pdf-parse npm</span></td>
+            <td><div class="deliverable">Working ingestion endpoint: POST /documents/upload</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">10</span></td>
+            <td><span class="focus-label">RAG Query Engine</span></td>
+            <td>Build the retrieval + generation pipeline: embed user query → search pgvector for top-5 similar chunks → construct prompt with context → call LLM → return answer with source citations.</td>
+            <td><span class="resource-tag">RAG Best Practices</span> <span class="resource-tag">LangChain.js Retrieval</span></td>
+            <td><div class="deliverable">Working RAG endpoint: POST /ask with source citations</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">11</span></td>
+            <td><span class="focus-label">RAG Polish + Testing</span></td>
+            <td>Add conversation memory (multi-turn). Implement re-ranking for better relevance. Add document/date filters. Test with 5+ documents. Handle edge cases: no results, irrelevant queries.</td>
+            <td><span class="resource-tag">Cohere Reranker</span> <span class="resource-tag">LangChain Memory</span></td>
+            <td><div class="deliverable">Complete "Chat with Docs" app — Portfolio Project #1</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">12</span></td>
+            <td><span class="focus-label">Make.com Fundamentals</span></td>
+            <td>Sign up for Make.com (free tier). Learn: scenarios, modules, routers, iterators, data stores, error handling. Build 4 automations: email→CRM, social media scheduler, lead capture, data transformation.</td>
+            <td><span class="resource-tag">Make.com Academy</span> <span class="resource-tag">Make Templates</span> <span class="resource-tag">YouTube Tutorials</span></td>
+            <td><div class="deliverable">4 working Make.com scenarios + all core modules understood</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">13</span></td>
+            <td><span class="focus-label">Make.com + AI Workflows</span></td>
+            <td>Build AI-powered scenarios: (1) auto-reply to customer emails with GPT, (2) RSS → summarize → post to WordPress, (3) form submission → GPT analysis → CRM update with AI lead scoring.</td>
+            <td><span class="resource-tag">Make.com OpenAI Module</span> <span class="resource-tag">HTTP Module</span></td>
+            <td><div class="deliverable">3 AI-powered Make.com automations</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">14</span></td>
+            <td><span class="focus-label">n8n vs Make.com</span></td>
+            <td>Build the SAME automation in both platforms. Compare: ease of use, pricing, self-hosting, API limits, AI nodes. Write a comparison doc with decision framework for recommending each to clients.</td>
+            <td><span class="resource-tag">Both Platform Docs</span> <span class="resource-tag">Pricing Pages</span></td>
+            <td><div class="deliverable">Comparison document + client recommendation framework</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip-bar">💡 pgvector on PostgreSQL is your unfair advantage — most devs pay for Pinecone, you use what you already know for free.</div>
+  </section>
+
+  <!-- ===================== WEEK 3 ===================== -->
+  <section class="week-section week-3">
+    <div class="week-header">
+      <span class="week-badge">Week 3</span>
+      <h2 class="week-title">AI Agents + MCP + Advanced Automation</h2>
+    </div>
+    <p class="week-goal">Goal: Build autonomous AI agents with tool calling, learn MCP protocol, and create complex multi-step automation systems.</p>
+
+    <div class="plan-table-wrap">
+      <table class="plan-table">
+        <thead><tr><th>Day</th><th>Focus Area</th><th>Tasks & Activities</th><th>Resources</th><th>Deliverable</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="day-num">15</span></td>
+            <td><span class="focus-label">Function / Tool Calling</span></td>
+            <td>Learn function calling in OpenAI and tool use in Anthropic API. Define tool schemas (JSON Schema). Build a NestJS agent that can call 3 tools: search DB, get weather, calculate math.</td>
+            <td><span class="resource-tag">OpenAI Function Calling</span> <span class="resource-tag">Anthropic Tool Use</span></td>
+            <td><div class="deliverable">NestJS agent with 3 working tools responding to natural language</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">16</span></td>
+            <td><span class="focus-label">Multi-Step AI Agent</span></td>
+            <td>Build an agent that handles multi-step tasks: user asks complex question → agent plans steps → executes tools sequentially → synthesizes answer. Add error recovery, retry logic, and agent memory.</td>
+            <td><span class="resource-tag">LangChain.js Agents</span> <span class="resource-tag">ReAct Pattern</span></td>
+            <td><div class="deliverable">Multi-step agent that chains 3+ tool calls for complex queries</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">17</span></td>
+            <td><span class="focus-label">MCP Protocol Basics</span></td>
+            <td>Study Anthropic's Model Context Protocol. Understand: servers, clients, tools, resources, prompts. Set up MCP TypeScript SDK. Build your first MCP server exposing a simple tool (e.g., database query).</td>
+            <td><span class="resource-tag">modelcontextprotocol.io</span> <span class="resource-tag">MCP TypeScript SDK</span></td>
+            <td><div class="deliverable">Working MCP server with 1 tool, testable via MCP inspector</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">18</span></td>
+            <td><span class="focus-label">MCP Advanced Server</span></td>
+            <td>Build a production MCP server exposing your RAG system as tools: search_documents, upload_document, list_documents. Connect to Claude Desktop. Test end-to-end.</td>
+            <td><span class="resource-tag">MCP Server Examples</span> <span class="resource-tag">Claude Desktop Config</span></td>
+            <td><div class="deliverable">MCP server exposing RAG tools — Portfolio Project #2</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">19</span></td>
+            <td><span class="focus-label">Advanced n8n Chains</span></td>
+            <td>Build complex n8n workflows: (1) email → classify → route to specialist AI → respond, (2) upload → OCR → AI extract → store in DB, (3) n8n calling your custom NestJS AI backend via webhooks.</td>
+            <td><span class="resource-tag">n8n Code Node</span> <span class="resource-tag">Webhook Node</span> <span class="resource-tag">Advanced Docs</span></td>
+            <td><div class="deliverable">3 advanced n8n workflows with custom backend integration</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">20</span></td>
+            <td><span class="focus-label">Advanced Make.com</span></td>
+            <td>Build complex Make.com scenarios: (1) research → outline → draft → edit → publish pipeline, (2) ticket → classify → auto-reply or escalate, (3) CSV → AI analysis → report generation.</td>
+            <td><span class="resource-tag">Make.com Routers</span> <span class="resource-tag">Iterators</span> <span class="resource-tag">Error Handling</span></td>
+            <td><div class="deliverable">3 advanced Make.com scenarios with multi-step AI logic</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">21</span></td>
+            <td><span class="focus-label">Full Integration Project</span></td>
+            <td>Build end-to-end AI Customer Support System: NestJS backend with RAG + AI agent that searches docs, answers questions, logs to DB. n8n handles ticket routing, escalation emails, weekly reports.</td>
+            <td><span class="resource-tag">All Previous Resources</span> <span class="resource-tag">Your Creativity</span></td>
+            <td><div class="deliverable">Complete AI support system — Portfolio Project #3</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip-bar">💡 MCP is brand new — learning it now puts you 6+ months ahead of 99% of developers worldwide.</div>
+  </section>
+
+  <!-- ===================== WEEK 4 ===================== -->
+  <section class="week-section week-4">
+    <div class="week-header">
+      <span class="week-badge">Week 4</span>
+      <h2 class="week-title">Portfolio, Monetization & Job Hunting</h2>
+    </div>
+    <p class="week-goal">Goal: Polish portfolio, set up all freelancing channels, start earning money, and land job interviews.</p>
+
+    <div class="plan-table-wrap">
+      <table class="plan-table">
+        <thead><tr><th>Day</th><th>Focus Area</th><th>Tasks & Activities</th><th>Resources</th><th>Deliverable</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="day-num">22</span></td>
+            <td><span class="focus-label">GitHub Portfolio</span></td>
+            <td>Polish all 3 projects on GitHub. Each repo: professional README with architecture diagram, screenshots/GIF demos, tech stack badges, setup instructions, and "What I Learned" section. Pin repos.</td>
+            <td><span class="resource-tag">GitHub README Guides</span> <span class="resource-tag">Mermaid Diagrams</span> <span class="resource-tag">Loom</span></td>
+            <td><div class="deliverable">3 polished GitHub repos pinned to profile</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">23</span></td>
+            <td><span class="focus-label">Deploy + Demo</span></td>
+            <td>Deploy at least 1 project live (Railway/Render for backend, Vercel for frontend). Record 2-minute Loom walkthrough of each project. Update personal website with project showcases.</td>
+            <td><span class="resource-tag">Railway.app</span> <span class="resource-tag">Render.com</span> <span class="resource-tag">Vercel</span></td>
+            <td><div class="deliverable">1 live deployed project + 3 demo videos recorded</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">24</span></td>
+            <td><span class="focus-label">LinkedIn Optimization</span></td>
+            <td>Update headline: "AI Backend Engineer | n8n & Make.com Automation Expert | NestJS". Rewrite summary with AI keywords. Add projects to Featured. Update skills. Connect with 50 people in AI space.</td>
+            <td><span class="resource-tag">LinkedIn Optimization</span> <span class="resource-tag">AI Community Groups</span></td>
+            <td><div class="deliverable">Fully optimized LinkedIn + 50 new connections</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">25</span></td>
+            <td><span class="focus-label">Upwork Setup</span></td>
+            <td>Create/update Upwork profile. Write 4 specialized service descriptions: AI chatbot dev, n8n/Make.com automation, RAG system building, AI API integration. Set rate $40–60/hr. Send 5 proposals.</td>
+            <td><span class="resource-tag">Upwork Profile Tips</span> <span class="resource-tag">Winning Proposals</span></td>
+            <td><div class="deliverable">Complete Upwork profile + 5 proposals sent</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">26</span></td>
+            <td><span class="focus-label">Fiverr + Communities</span></td>
+            <td>Create 3 Fiverr gigs: AI chatbot, workflow automation, AI integration. Send 5 more Upwork proposals. Join n8n community forum and Make.com partner program. Introduce yourself in both.</td>
+            <td><span class="resource-tag">Fiverr Gig SEO</span> <span class="resource-tag">n8n Forum</span> <span class="resource-tag">Make.com Partners</span></td>
+            <td><div class="deliverable">3 Fiverr gigs live + 10 total proposals + community profiles</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">27</span></td>
+            <td><span class="focus-label">Content Day #1</span></td>
+            <td>Write 2 LinkedIn posts: (1) "How I built a RAG system with NestJS + pgvector" (technical), (2) "Why every business needs AI automation in 2026" (business). Share 1 n8n template publicly.</td>
+            <td><span class="resource-tag">LinkedIn</span> <span class="resource-tag">dev.to</span> <span class="resource-tag">n8n Templates</span></td>
+            <td><div class="deliverable">2 published posts + 1 shared automation template</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">28</span></td>
+            <td><span class="focus-label">Content Day #2</span></td>
+            <td>Write a detailed dev.to/Medium tutorial of one project (e.g., "Building an AI Customer Support System with NestJS, RAG, and n8n"). Cross-post on LinkedIn and Twitter/X. Best lead magnet.</td>
+            <td><span class="resource-tag">dev.to</span> <span class="resource-tag">Medium</span> <span class="resource-tag">Hashnode</span></td>
+            <td><div class="deliverable">1 long-form technical article published + cross-posted</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">29</span></td>
+            <td><span class="focus-label">Job Blitz #1</span></td>
+            <td>Apply to 15+ jobs. Targets: AI Backend Engineer, LLM Integration Developer, Automation Engineer, AI Platform Engineer. Platforms: LinkedIn, Wellfound, Arc.dev, Turing, RemoteOK. Customize each application.</td>
+            <td><span class="resource-tag">LinkedIn Jobs</span> <span class="resource-tag">Wellfound</span> <span class="resource-tag">Arc.dev</span> <span class="resource-tag">Turing</span></td>
+            <td><div class="deliverable">15+ tailored job applications submitted</div></td>
+          </tr>
+          <tr>
+            <td><span class="day-num">30</span></td>
+            <td><span class="focus-label">Job Blitz #2 + Plan</span></td>
+            <td>Apply 15 more jobs. Send 5 more Upwork proposals. Cold outreach to 5 small businesses offering free automation audit. Create 90-day continuation plan: LangGraph, CrewAI, fine-tuning, voice AI.</td>
+            <td><span class="resource-tag">All Job Platforms</span> <span class="resource-tag">LinkedIn Outreach</span></td>
+            <td><div class="deliverable">30+ total applications + 90-day continuation roadmap</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip-bar">💡 Don't wait to feel ready — start applying and sending proposals now. Real projects teach 10x faster than tutorials.</div>
+  </section>
+
+  <!-- ===================== MONEY SECTION ===================== -->
+  <section class="money-section">
+    <h2 class="section-header">Income Streams After 30 Days</h2>
+    <p class="section-sub">Seven ways to monetize your new AI + Automation skill stack</p>
+
+    <div class="income-grid">
+      <div class="income-card">
+        <h3><span class="icon" style="background:#eff4ff;color:#2563eb;">💼</span> Upwork / Fiverr</h3>
+        <div class="rate">$40–100/hr · $500–3,000/project</div>
+        <div class="desc">AI chatbot development, OpenAI/Claude integration into existing apps, RAG system setup for company documents, AI-powered search features.</div>
+        <div class="how"><strong>Start:</strong> Search "AI chatbot", "OpenAI integration" on Upwork. Send 3–5 tailored proposals daily with portfolio links.</div>
+      </div>
+
+      <div class="income-card">
+        <h3><span class="icon" style="background:#ecfdf5;color:#059669;">⚡</span> n8n Automation</h3>
+        <div class="rate">$500–5,000/workflow · $1.5–4K/mo retainer</div>
+        <div class="desc">Custom n8n workflow development, AI-powered automation, self-hosted n8n setup for businesses, ongoing maintenance retainers.</div>
+        <div class="how"><strong>Start:</strong> Join n8n community. Share free templates. Post in small business groups offering "free automation audit."</div>
+      </div>
+
+      <div class="income-card">
+        <h3><span class="icon" style="background:#fef3c7;color:#d97706;">🔧</span> Make.com Services</h3>
+        <div class="rate">$500–3,000/scenario · $1–3K/mo retainer</div>
+        <div class="desc">Make.com scenario building, multi-step AI workflows, business process automation, data integration pipelines.</div>
+        <div class="how"><strong>Start:</strong> Apply to Make.com Partner Program. List on experts marketplace. Target agencies on LinkedIn.</div>
+      </div>
+
+      <div class="income-card">
+        <h3><span class="icon" style="background:#fae8ff;color:#a855f7;">🚀</span> AI SaaS Products</h3>
+        <div class="rate">$29–99/mo per user (recurring)</div>
+        <div class="desc">Micro-SaaS: AI document search for niche industries, AI email assistant, AI content generator for specific verticals.</div>
+        <div class="how"><strong>Start:</strong> Find a niche problem. Build MVP in 1–2 weekends with NestJS + AI. Launch on Product Hunt.</div>
+      </div>
+
+      <div class="income-card">
+        <h3><span class="icon" style="background:#eff4ff;color:#2563eb;">🏢</span> Remote Full-Time</h3>
+        <div class="rate">$3,000–8,000/mo (PKR 800K–2.2M)</div>
+        <div class="desc">AI Backend Engineer, LLM Integration Developer, AI Platform Engineer, Automation Engineer at startups worldwide.</div>
+        <div class="how"><strong>Start:</strong> LinkedIn, Wellfound, Arc.dev, Turing, Toptal. Highlight your NestJS + AI + automation combo.</div>
+      </div>
+
+      <div class="income-card">
+        <h3><span class="icon" style="background:#ecfdf5;color:#059669;">🏗️</span> Automation Agency</h3>
+        <div class="rate">$2,000–10,000 per client project</div>
+        <div class="desc">End-to-end AI automation consulting: audit → design → build with n8n/Make.com/custom code → maintain and optimize.</div>
+        <div class="how"><strong>Start:</strong> 2–3 discounted projects for testimonials. Build case studies. Scale with referrals.</div>
+      </div>
+
+      <div class="income-card">
+        <h3><span class="icon" style="background:#fef3c7;color:#d97706;">🎓</span> Teaching + Content</h3>
+        <div class="rate">$500–3,000/mo passive (growing)</div>
+        <div class="desc">Udemy/Skillshare courses on n8n + AI, NestJS + LLM integration. YouTube tutorials. Paid workshops and blogging.</div>
+        <div class="how"><strong>Start:</strong> Free YouTube videos → build audience → launch paid Udemy course at 1,000+ followers.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DAILY ROUTINE ===================== -->
+  <section class="routine-section">
+    <h2 class="section-header">Daily Routine — Full-Time Schedule</h2>
+    <div class="routine-timeline">
+      <div class="routine-item">
+        <div class="routine-time">9:00 – 11:00</div>
+        <div class="routine-content"><strong>Deep Learning Block</strong><p>Watch tutorials, read docs, study concepts from the day's plan. No distractions. Phone on silent.</p></div>
+      </div>
+      <div class="routine-item">
+        <div class="routine-time">11:00 – 1:00</div>
+        <div class="routine-content"><strong>Build + Code</strong><p>Hands-on coding. Build the day's deliverable. Follow along, then experiment on your own. Push to GitHub.</p></div>
+      </div>
+      <div class="routine-item">
+        <div class="routine-time">2:00 – 4:00</div>
+        <div class="routine-content"><strong>Practice + Experiment</strong><p>Build n8n / Make.com workflows. Try variations. Break things. Fix them. This is where real skills are built.</p></div>
+      </div>
+      <div class="routine-item">
+        <div class="routine-time">4:00 – 6:00</div>
+        <div class="routine-content"><strong>Job Hunt + Freelance</strong><p>Apply to jobs, send Upwork proposals, write LinkedIn posts, network in AI communities.</p></div>
+      </div>
+      <div class="routine-item">
+        <div class="routine-time">8:00 – 9:00</div>
+        <div class="routine-content"><strong>Review + Plan</strong><p>Review today's learning. Update progress tracker. Read tomorrow's plan. Prepare questions to research.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <div class="footer-note">
+    <p><strong>Your Competitive Edge:</strong> The combination of <span class="highlight">NestJS + TypeScript + AWS + AI APIs + RAG + n8n + Make.com + MCP</span> is extraordinarily rare. Most AI engineers can't build production backends. Most backend developers don't understand AI. Most automation experts can't write code. <strong>You will be all three.</strong> Companies and clients will pay a premium for someone who can architect an AI backend AND automate entire business workflows. Start today. Ship fast. Iterate ruthlessly.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
